@@ -2,8 +2,8 @@ clear all, close all, clc
 set(0,'defaultfigurecolor','w')
 addpath(genpath(pwd));
 
-load(['testres_mat',filesep,'test_mlp_labels_2subjects.mat']);
-load(['testres_mat',filesep,'test_mlp_outputs_2subjects.mat']);
+load(['test_res',filesep,'test_mlp_labels_2subjects.mat']);
+load(['test_res',filesep,'test_mlp_outputs_2subjects.mat']);
 
 mksz = 100;
 mkcl = 'b';

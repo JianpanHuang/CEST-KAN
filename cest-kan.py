@@ -74,11 +74,11 @@ for epoch in range(epochs):
     model.train()
     with tqdm(train_loader) as pbar:
         running_loss = 0.0
-        for i, (zspec, param) in enumerate(pbar):
+        for i, (zspec, labels) in enumerate(pbar):
             zspec = zspec.view(-1, 43).to(device)
             optimizer.zero_grad()
             output = model(zspec)
-            loss = loss_func(output, param.to(device))
+            loss = loss_func(output, labels.to(device))
             loss.backward()
             optimizer.step()
             train_loss += loss.item()*zspec.size(0)
@@ -92,10 +92,10 @@ for epoch in range(epochs):
     val_accuracy = 0
     val_num = 0
     with torch.no_grad():
-        for zspec, param in val_loader:
+        for zspec, labels in val_loader:
             zspec = zspec.view(-1, 43).to(device)
             output = model(zspec)
-            val_loss += loss_func(output, param.to(device)).item()*zspec.size(0)
+            val_loss += loss_func(output, labels.to(device)).item()*zspec.size(0)
             val_num += zspec.size(0)
     val_loss_ave = val_loss/val_num
     val_loss_all.append(val_loss/val_num)
@@ -132,7 +132,7 @@ tensor_dict = {
     'train_loss_all': train_loss_all,
     'val_loss_all': val_loss_all
 }
-torch.save(tensor_dict,"D:\projects\cestkan\code\param\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
+torch.save(tensor_dict,"D:\projects\cestkan\code\labels\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
 
 # Plot the loss values against the number of epochs
 fig, ax = plt.subplots()

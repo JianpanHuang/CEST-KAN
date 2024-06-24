@@ -15,9 +15,9 @@ from MSERegLoss import MSERegLoss
 transform = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))]
 )
-data = pd.read_csv('D:\projects\cestkan\code\cestdata\zspec_train_ss10_2.csv', header=None)
+data = pd.read_csv('data\train_zspec.csv', header=None)
 print(data.shape)
-targets = pd.read_csv('D:\projects\cestkan\code\cestdata\param_train_ss10_2.csv', header=None)
+targets = pd.read_csv('data\train_labels.csv', header=None)
 data_arr = np.array(data)
 data_arr = np.float32(data_arr)
 targets_arr = np.array(targets)

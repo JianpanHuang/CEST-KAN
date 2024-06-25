@@ -1,7 +1,7 @@
 import torch 
 import matplotlib.pyplot as plt
 
-file_path = 'param'
+file_path = 'modelparam'
 file_name = 'kan_100_1_102_1717484547.pth'
 cont = torch.load(file_path+'/'+file_name)
 train_loss_all = cont['train_loss_all']

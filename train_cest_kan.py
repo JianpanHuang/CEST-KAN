@@ -15,9 +15,8 @@ from MSERegLoss import MSERegLoss
 transform = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))]
 )
-data = pd.read_csv('data\train_zspec.csv', header=None)
-print(data.shape)
-targets = pd.read_csv('data\train_labels.csv', header=None)
+data = pd.read_csv('D:\CEST-KAN\data\cest_zspec_train.csv', header=None)
+targets = pd.read_csv('D:\CEST-KAN\data\cest_param_train.csv', header=None)
 data_arr = np.array(data)
 data_arr = np.float32(data_arr)
 targets_arr = np.array(targets)
@@ -120,7 +119,7 @@ train_time = end_time - start_time
 # print(train_time)
 
 # Save the trained model
-torch.save(model.state_dict(), "D:\projects\cestkan\code\model\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
+torch.save(model.state_dict(), "D:\CEST-KAN\model\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
 
 # Save the training parameters
 tensor_dict = {
@@ -132,7 +131,7 @@ tensor_dict = {
     'train_loss_all': train_loss_all,
     'val_loss_all': val_loss_all
 }
-torch.save(tensor_dict,"D:\projects\cestkan\code\labels\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
+torch.save(tensor_dict,"D:\CEST-KAN\model\kan_" + str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) + ".pth")
 
 # Plot the loss values against the number of epochs
 fig, ax = plt.subplots()
@@ -143,4 +142,4 @@ ax.set_xlabel('Epochs')
 ax.set_ylabel('Loss')
 ax.legend()
 plt.show()
-# plt.savefig("D:\projects\cestkan\code\loss\kan_loss_'+str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) +'.png")
+# plt.savefig("D:\CEST-KAN\loss\kan_loss_'+str(hidd_layer_sz) + '_' + str(hidd_layer_num) + '_' + str(epoch+1) + '_' + str(int(time.time())) +'.png")

@@ -7,4 +7,4 @@ This repository demonstrates an example of CEST MRI data analysis using Kolmogor
 
 
 Reference:
-Wang J, Cai P, Wang Z, Zhang H, Huang J*. CEST-KAN: Kolmogorov-Arnold Networks for CEST MRI Data Analysis[J]. arXiv preprint arXiv:2406.16026, 2024.
+Wang J#, Cai P#, Wang Z, Zhang H, Huang J*. CEST-KAN: Kolmogorov-Arnold Networks for CEST MRI Data Analysis[J]. arXiv preprint arXiv:2406.16026, 2024.

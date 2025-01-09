@@ -1,7 +1,7 @@
 import torch 
 import matplotlib.pyplot as plt
 
-file_path = 'D:\projects\CEST-KAN0725\cestkanpc10\code\lkan_kf_gs1_pf7_param'
+file_path = 'New Version/model_param'
 file_name = 'lorentkan5_kf1_noise0_r3_1_7100_1_63_1614.pth'
 cont = torch.load(file_path+'/'+file_name)
 train_loss_all = cont['train_loss_all']

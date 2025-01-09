@@ -1,8 +1,8 @@
 import torch 
 import matplotlib.pyplot as plt
 
-file_path = 'D:\projects\CEST-KAN0725\cestkanpc10\code\kf_gs1_kan_param'
-file_name = 'kan5_kf3_noise0_r1100_1_68_2334.pth'
+file_path = 'New Version/model_param/'
+file_name = 'kan5_kf1_noise0_r2100_1_64_2209.pth'
 cont = torch.load(file_path+'/'+file_name)
 train_loss_all = cont['train_loss_all']
 val_loss_all = cont['val_loss_all']

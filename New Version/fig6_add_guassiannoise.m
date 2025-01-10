@@ -4,7 +4,7 @@ clc;
 addpath(genpath(pwd));
 
 % 文件名和数据读取
-filename = 'zspec_test_ss1';
+filename = 'data/cest_train_zspec.csv';
 data = csvread([filename, '.csv']);
 
 % 噪声添加

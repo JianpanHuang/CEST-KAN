@@ -10,7 +10,7 @@ from efficient_kan.kan_variants import LorentzianKAN
 num_grids = 1
 model = LorentzianKAN([43, 100, 9], num_grids=num_grids, k1=1, k2=5)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 使用 GPU 如果可用
-model_path = 'D:\projects\CEST-KAN0725\cestkanpc10\code\kan_v3_lkan_kf_gs1_pf5_model\lorentkan5_kf1_noise0_r4_1_5100_1_44_1538.pth'
+model_path = 'New Version/model/lorentkan5_kf1_noise0_r4_1_5100_1_44_1538.pth'
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.to(device)
 model.eval()

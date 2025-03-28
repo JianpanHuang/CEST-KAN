@@ -1,7 +1,7 @@
 # from common.public import public # type: ignore
 
 from efficient_kan import KAN
-from efficient_kan.kan_variants import FastKAN, LorentzianKAN
+from efficient_kan.kan_variants import LorentzianKAN
 import torch
 # import torch.nn as nn
 import torch.optim as optim
@@ -55,16 +55,16 @@ noise_level = [0]
 
 gs = 9
 repeat_model = 5                                                                           
-root = root = 'D:/projects/CEST-KAN0725/cestkanpc10/'
-save_name = "kan_v3_param_100000"
+root = root = 'D:/projects/'
+save_name = "kan_v3"
 record_save_path = root+'code/'+save_name+'_param/'+make_time_folder() +'.csv'
 
 # train & val data
 data = pd.read_csv(root+'zspec_train_ss25.csv', header=None)
 targets = pd.read_csv(root+'param_train_ss25.csv', header=None)
 # test data
-test_data = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\zspec_test_2subjects.csv', header=None)
-test_targets = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\param_test_2subjects.csv', header=None)
+test_data = pd.read_csv(r'zspec_test_2subjects.csv', header=None)
+test_targets = pd.read_csv(r'param_test_2subjects.csv', header=None)
 
 test_data_arr = np.array(test_data)
 test_data_arr = np.float32(test_data_arr)

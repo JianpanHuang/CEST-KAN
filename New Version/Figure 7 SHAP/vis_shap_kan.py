@@ -18,8 +18,8 @@ model.to(device)
 model.eval()
 
 # Load data
-data = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\zspec_test_400sample_2.csv', header=None)
-targets = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\param_test_400sample_2.csv', header=None)
+data = pd.read_csv(r'zspec_test_400sample_2.csv', header=None)
+targets = pd.read_csv(r'param_test_400sample_2.csv', header=None)
 data_arr = np.array(data).astype(np.float32)
 targets_arr = np.array(targets).astype(np.float32)
 

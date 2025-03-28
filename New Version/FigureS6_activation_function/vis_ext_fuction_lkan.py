@@ -9,8 +9,8 @@ print(device)
 
 # 加载模型
 num_grids = 1
-model = LorentzianKAN([43,4,9], num_grids=num_grids, k1=1, k2=5)
-model.load_state_dict(torch.load('D:\projects\CEST-KAN0725\cestkanpc10\code\kan_v3_param_2000_model\lorentkan5_kf1_noise0_hidden1_r2_1_54_1_37_1382.pth', map_location=device))
+model = LorentzianKAN([43,100,9], num_grids=num_grids, k1=1, k2=5)
+model.load_state_dict(torch.load('New Version/model/lorentkan5_kf1_noise0_r4_1_5100_1_44_1538.pth', map_location=device))
 model.to(device)
 model.eval()
 

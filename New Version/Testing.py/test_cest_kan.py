@@ -15,7 +15,7 @@ print(device)
 num_grids = 1
 spline_order = 3
 model = KAN([43, 100, 9], num_grids=num_grids, spline_order=spline_order)
-model_path = r'D:\projects\CEST-KAN0725\cestkanpc10\code\kf_gs1_kan_model\kan5_kf1_noise0_r2kf1_100_1_44_2209.pth'
+model_path = r'New Version/model/kan5_kf1_noise0_r3kf1_100_1_48_2409.pth'
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.to(device)
 model.eval()

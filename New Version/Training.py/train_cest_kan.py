@@ -56,7 +56,7 @@ noise_level = [0]
 gs = 9
 repeat_model = 5                                                                           
 root = root = 'D:/projects/'
-save_name = "kan_v3"
+save_name = "kan_v3_kan"
 record_save_path = root+'code/'+save_name+'_param/'+make_time_folder() +'.csv'
 
 # train & val data

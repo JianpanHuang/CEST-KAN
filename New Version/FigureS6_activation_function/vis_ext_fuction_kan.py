@@ -15,12 +15,11 @@ model.load_state_dict(torch.load('New Version/model/kan5_kf1_noise0_r3kf1_100_1_
 model.to(device)
 model.eval()
 
-data = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\zspec_test_2subjects.csv', header=None)
-targets = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\param_test_2subjects.csv', header=None)
+data = pd.read_csv(r'zspec_test_2subjects.csv', header=None)
+targets = pd.read_csv(r'param_test_2subjects.csv', header=None)
 data_arr = np.array(data).astype(np.float32)
 targets_arr = np.array(targets).astype(np.float32)
   
-# 创建张量并移动到GPU
 test_data_tensor = torch.tensor(data_arr).to(device)
 test_targets_tensor = torch.tensor(targets_arr).to(device)
 test_data_tensor_mean = torch.mean(test_data_tensor, dim=0).view(1, -1).to(device)  # 移动到GPU

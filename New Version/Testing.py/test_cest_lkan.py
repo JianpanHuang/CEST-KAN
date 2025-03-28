@@ -18,7 +18,7 @@ k1 = 1
 k2 = 7 
 model = LorentzianKAN([43, 100, 9], num_grids=num_grids, k1=k1, k2=k2)
 
-model_path = r'D:\projects\CEST-KAN0725\cestkanpc10\code\lkan_kf_gs1_pf7_model\lorentkan5_kf1_noise0_r3_1_7100_1_43_1614.pth'
+model_path = r'New Version/model/lorentkan5_kf1_noise0_r4_1_5100_1_44_1538.pth'
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.to(device)
 model.eval()

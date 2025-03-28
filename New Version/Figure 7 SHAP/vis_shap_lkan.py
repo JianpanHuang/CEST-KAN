@@ -40,7 +40,7 @@ print("Shape of shap_values matrix:", [sv.shape for sv in shap_values])
 print("Shape of the provided data matrix:", test_data_tensor.cpu().numpy().shape)
 
 # Create save path
-save_path = r'D:\projects\CEST-KAN0725\cestkanpc10\shap\lkan_manu\Bar_2'
+save_path = r'D:\projects\'
 os.makedirs(save_path, exist_ok=True)
 
 # Define new feature names
@@ -86,7 +86,7 @@ for i in range(9):  # Visualize 9 output features
         show=False,
         max_display=20,
         plot_type='bar',
-        color=custom_color  # 使用自定义颜色
+        color=custom_color 
     )
     plt.ylabel("Frequency offsets (ppm)", fontsize=20, labelpad=10)
     plt.xlabel("Mean|Shap value|", fontsize=20)
@@ -94,7 +94,6 @@ for i in range(9):  # Visualize 9 output features
     plt.xticks(fontsize=20, rotation=45)
     plt.yticks(fontsize=20)
 
-    # 设置横坐标范围
     if (i + 1) in x_limits:
         plt.xlim(x_limits[i + 1])
 

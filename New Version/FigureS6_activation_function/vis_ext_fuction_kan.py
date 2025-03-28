@@ -10,8 +10,8 @@ print(device)
 # 加载模型
 num_grids = 9
 spline_order = 3
-model = KAN([43, 4, 9], num_grids=num_grids, spline_order=spline_order)
-model.load_state_dict(torch.load('D:\projects\CEST-KAN0725\cestkanpc10\code\kan_v3_param_2000_model\kan5_kf1_hidden4_noise0_r4kf1_4_1_49_2255.pth', map_location=device))
+model = KAN([43, 100, 9], num_grids=num_grids, spline_order=spline_order)
+model.load_state_dict(torch.load('New Version/model/kan5_kf1_noise0_r3kf1_100_1_48_2409.pth', map_location=device))
 model.to(device)
 model.eval()
 

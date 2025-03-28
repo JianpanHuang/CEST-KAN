@@ -20,8 +20,8 @@ model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.to(device)
 model.eval()
 
-data = pd.read_csv('D:\projects\CEST-KAN0725\data27noise\zspec_test_ss2.csv', header=None)
-targets = pd.read_csv('D:\projects\CEST-KAN0725\data27noise\param_test_ss2.csv', header=None)
+data = pd.read_csv('zspec_test_ss2.csv', header=None)
+targets = pd.read_csv('param_test_ss2.csv', header=None)
 data_arr = np.array(data).astype(np.float32)
 targets_arr = np.array(targets).astype(np.float32)
 

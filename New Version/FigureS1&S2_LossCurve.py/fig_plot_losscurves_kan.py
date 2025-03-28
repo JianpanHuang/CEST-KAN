@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker  # 导入 ticker 模块
 
 # 加载数据
-file_path = 'New Version/model'
-file_name = 'kan5_kf1_noise0_r3kf1_100_1_48_2409.pth'
+file_path = 'New Version/model_param'
+file_name = 'kan5_kf1_noise0_r3100_1_68_2409.pth'
 cont = torch.load(file_path + '/' + file_name)
 train_loss_all = cont['train_loss_all']
 val_loss_all = cont['val_loss_all']

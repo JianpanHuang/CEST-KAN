@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
 model = MLP(43, [100], 9)
-model.load_state_dict(torch.load(r'D:\projects\CEST-KAN0725\cestkanpc10\code\kf_mlp2_model\mlp_noise0_r4100_-1_65_2434.pth'))
+model.load_state_dict(torch.load(r'New Version/model/mlp_kf1_noise0_r4100_-1_54_1076.pth'))
 model.to(device)
 model.eval()
 

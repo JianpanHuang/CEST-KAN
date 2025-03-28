@@ -2,8 +2,8 @@ import torch
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker  # 导入 ticker 模块
 
-file_path = 'D:\projects\CEST-KAN0725\cestkanpc10\code\kan_v3_mlp_kf_param'
-file_name = 'mlp_kf4_noise0_r4100_-1_69_994.pth'
+file_path = 'New Version/model_param'
+file_name = 'mlp_kf1_noise0_r4100_-1_74_1076.pth'
 cont = torch.load(file_path+'/'+file_name)
 train_loss_all = cont['train_loss_all']
 val_loss_all = cont['val_loss_all']

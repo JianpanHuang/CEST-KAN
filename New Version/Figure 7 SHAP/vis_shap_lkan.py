@@ -16,26 +16,23 @@ model.to(device)
 model.eval()
 
 # Load data
-data = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\zspec_test_400sample_2.csv', header=None)
-targets = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\param_test_400sample_2.csv', header=None)
+data = pd.read_csv(r'zspec_test_400sample_2.csv', header=None)
+targets = pd.read_csv(r'param_test_400sample_2.csv', header=None)
 data_arr = np.array(data).astype(np.float32)
 targets_arr = np.array(targets).astype(np.float32)
 
-# Prepare test data
+
 test_data_tensor = torch.tensor(data_arr).to(device)
 test_targets_tensor = torch.tensor(targets_arr).to(device)
 
-# Define a function wrapper for SHAP input
 def model_predict(data):
     data = torch.tensor(data).float().to(device)  # Move input data to GPU
     with torch.no_grad():
         output = model(data)
     return output.cpu().numpy()  # Move output back to CPU
 
-# Initialize Kernel SHAP explainer
 explainer = shap.KernelExplainer(model_predict, test_data_tensor.cpu().numpy())
 
-# Calculate Kernel SHAP
 shap_values = explainer.shap_values(test_data_tensor.cpu().numpy())
 
 # Print shapes

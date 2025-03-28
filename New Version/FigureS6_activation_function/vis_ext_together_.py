@@ -2,8 +2,8 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 # 设置图片的路径和参数
-image_folder = r'D:\projects\CEST-KAN0725\ext_fuction_figures_lkan'  # 图片文件夹路径
-output_image = r'D:\projects\CEST-KAN0725\ext_fuction_figures_llkan.jpg'  # 输出图片路径
+image_folder = r'D:\projects\ext_fuction_figures_lkan'  # 图片文件夹路径
+output_image = r'D:\projects\ext_fuction_figures_llkan.jpg'  # 输出图片路径
 rows = 4
 cols = 43
 image_width = 100  # 每张图片的宽度

@@ -10,7 +10,7 @@ import os
 # Load model
 num_grids = 9
 spline_order = 3
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # 使用 GPU，如果可用
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  
 model = KAN([43, 100, 9], num_grids=num_grids, spline_order=spline_order)
 model_path = "New Version/model/kan5_kf1_noise0_r3kf1_100_1_48_2409.pth"
 model.load_state_dict(torch.load(model_path, map_location=device))
@@ -36,7 +36,7 @@ explainer = shap.KernelExplainer(model_predict, test_data_tensor.cpu().numpy())
 
 shap_values = explainer.shap_values(test_data_tensor.cpu().numpy())
 
-save_path = r'D:\projects\CEST-KAN0725\cestkanpc10\shap\kan_manu\Bar_2'
+save_path = r'D:\projects\'
 os.makedirs(save_path, exist_ok=True)
 
 # Define new feature names

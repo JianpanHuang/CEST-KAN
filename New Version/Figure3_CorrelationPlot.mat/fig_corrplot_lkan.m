@@ -1,8 +1,8 @@
 clear all, close all, clc
 set(0,'defaultfigurecolor','w')
 
-load('test_lkan_labels_2Subjects.mat');
-load('test_lkan_outputs_2Subjects.mat');
+load('New Version/test_res/test_lkan_labels_2Subjects.mat');
+load('New Version/test_res/test_lkan_outputs_2Subjects.mat');
 mksz = 100;
 mkcl = 'b';
 mktp = 'o';

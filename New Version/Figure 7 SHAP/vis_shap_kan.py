@@ -23,24 +23,19 @@ targets = pd.read_csv(r'D:\projects\CEST-KAN0725\cestkanpc10\param_test_400sampl
 data_arr = np.array(data).astype(np.float32)
 targets_arr = np.array(targets).astype(np.float32)
 
-# Use all data for testing
 test_data_tensor = torch.tensor(data_arr).to(device)
 test_targets_tensor = torch.tensor(targets_arr).to(device)
 
-# Define a function wrapper for SHAP input
 def model_predict(data):
     data = torch.tensor(data).float().to(device)  # Move input data to GPU
     with torch.no_grad():
         output = model(data)
     return output.cpu().numpy()  # Move output back to CPU
 
-# Initialize Kernel SHAP explainer
 explainer = shap.KernelExplainer(model_predict, test_data_tensor.cpu().numpy())
 
-# Calculate Kernel SHAP
 shap_values = explainer.shap_values(test_data_tensor.cpu().numpy())
 
-# Create save path
 save_path = r'D:\projects\CEST-KAN0725\cestkanpc10\shap\kan_manu\Bar_2'
 os.makedirs(save_path, exist_ok=True)
 

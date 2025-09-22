@@ -1,5 +1,10 @@
 # CEST-KAN
-This repository demonstrates an example of CEST MRI data analysis using Kolmogorov-Arnold Networks (KAN) and Lorentzian-KAN (LKAN) for the paper "CEST MRI Data Analysis using Kolmogorov-Arnold Network (KAN) and Lorentzian-KAN (LKAN) Models" submitted to Magnetic Resonance in Medicine. The original KAN can be found [here](https://github.com/KindXiaoming/pykan), while the original efficient KAN can be found [here](https://github.com/Blealtan/efficient-kan).
+This repository contains the code and demo data for CEST MRI data analysis using Kolmogorov-Arnold Networks (KAN) and Lorentzian-KAN (LKAN), as presented in the following paper:
+
+Wang J, Cai P, Wang Z, Zhang H, Huang J*. [CEST MRI data analysis using Kolmogorov-Arnold network (KAN) and Lorentzian-KAN (LKAN) models](https://doi.org/10.1002/mrm.30548). Magnetic Resonance in Medicine 2025, 94(3), 1301-1317.
+
+If you use the code, please consider citing our paper above. The original KAN can be found [here](https://github.com/KindXiaoming/pykan), while the original efficient KAN can be found [here](https://github.com/Blealtan/efficient-kan).
+
 
 All updated files are in the ‘New version’ folder
 1. Training can be performed using train_cest_mlp.py, train_cest_kan.py and train_cest_lkan.py for MLP, KAN and LKAN from ‘New Version/Training.py’ folder, respectively.Testing can be performed using test_cest_mlp.py, test_cest_kan.py and test_cest_lkan.py for MLP, KAN and LKAN from ‘New Version/Testing.py’ folder, respectively.
